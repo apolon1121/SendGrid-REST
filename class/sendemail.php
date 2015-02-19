@@ -2,14 +2,14 @@
 
 interface IEmail {
 
-  public static function sendGrid($email,$subject,$message);
+  public static function sendGrid($email,$subject,$htmlmessage,$plaintext);
   
 }
 
 
 class sendEmail implements IEmail {
 
-  public static function sendGrid($email,$subject,$message) {
+  public static function sendGrid($email,$subject,$htmlmessage,$plaintext) {
         $url = 'https://api.sendgrid.com/';
         $user = '';
         $pass = '';
@@ -23,8 +23,8 @@ class sendEmail implements IEmail {
             'api_key'   => $pass,
             'to'        => $email,
             'subject'   => $subject,
-            'html'      => $message,
-            'text'      => $message,
+            'html'      => $htmlmessage,
+            'text'      => $plaintext,
             'from'      => 'example@example.com',
         );
 
