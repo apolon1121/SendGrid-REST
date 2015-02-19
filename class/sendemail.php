@@ -11,8 +11,8 @@ class sendEmail implements IEmail {
 
   public static function sendGrid($email,$subject,$htmlmessage,$plaintext) {
         $url = 'https://api.sendgrid.com/';
-        $user = '';
-        $pass = '';
+        $user = ''; //SendGrid User
+        $pass = ''; //SendGrid Password
 
 
 
